@@ -20,10 +20,11 @@ class NewtonRaphsonMult:
 
         for _ in range(15):
             mapped_values = self.map_values(initial_values, variables)
-            x_subs = X.subs(mapped_values)
-            for i in range(len(initial_values)):
-                value = initial_values[i]
-                value = value - self.
+            x_subs = self.mult.subs(zip(variables, initial_values))
+            print(x_subs)
+            #for i in range(len(initial_values)):
+            #    value = initial_values[i]
+            #    #value = value - self.
 
             print(initial_values)
 
@@ -48,5 +49,5 @@ if __name__ == "__main__":
     first = NewtonRaphsonMult([fx,gx], [x,y])
     print(first.mult)
     #print(first.jacobian_inv)
-    #first.newton_raphson_mult([2,0.5],['x', 'y'],X, 3)
+    first.newton_raphson_mult([2,0.5],[x,y],X, 3)
 
